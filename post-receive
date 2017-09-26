@@ -1,0 +1,13 @@
+#/bin/sh
+
+PROJECT_BASE_DIR=/path/to/project/dir/
+PROJECT_DIR=/path/to/project/document/root/
+CHECKOUT_BRANCH=production
+COMPOSER_INSTALL_SCRIPT=/path/to/composer/install/bash/script
+
+cd PROJECT_DIR
+unset GIT_DIR
+git checkout CHECKOUT_BRANCH
+git reset --hard
+COMPOSER_INSTALL_SCRIPT
+PROJECT_BASE_DIR/fix_permission.sh
