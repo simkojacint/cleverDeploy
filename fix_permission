@@ -4,14 +4,14 @@ WWW_GROUP=www-data
 PROJECT_DOCUMENT_ROOT=/path/to/project/document/root/
 
 
-sudo chown www-torta:www-torta -R /var/lib/tortarendelesbudapest/public_html/ 
-sudo chown www-torta:www-torta -R /var/lib/tortarendelesbudapest/public_html/.git
-sudo chmod 777 -R /var/lib/tortarendelesbudapest/public_html/
-sudo chmod 770 -R /var/lib/tortarendelesbudapest/public_html/.git
-sudo chown www-torta: /var/lib/tortarendelesbudapest/public_html/.git/hooks/*-receive
-sudo chmod 750 /var/lib/tortarendelesbudapest/public_html/.git/hooks/*-receive
-cd /var/lib/tortarendelesbudapest/public_html/
+sudo chown WWW_GROUP:WWW_GROUP -R /PROJECT_DOCUMENT_ROOT/ 
+sudo chown WWW_GROUP:WWW_GROUP -R /PROJECT_DOCUMENT_ROOT/.git
+sudo chmod 777 -R /PROJECT_DOCUMENT_ROOT/
+sudo chmod 770 -R /PROJECT_DOCUMENT_ROOT/.git
+sudo chown WWW_GROUP: /PROJECT_DOCUMENT_ROOT/.git/hooks/*-receive
+sudo chmod 750 /PROJECT_DOCUMENT_ROOT/.git/hooks/*-receive
+cd /PROJECT_DOCUMENT_ROOT/
 sudo git config core.filemode false
 sudo git config receive.denyCurrentBranch ignore
 
-sudo chown -R www-torta: -R /var/lib/tortarendelesbudapest/public_html/.git
+sudo chown -R WWW_GROUP: -R /PROJECT_DOCUMENT_ROOT/.git
